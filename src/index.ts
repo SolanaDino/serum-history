@@ -267,7 +267,7 @@ app.get('/tv/config', async (req, res) => {
   res.send(response)
 })
 
-app.get('/tv/symbols', async (req, res) => {
+app.get('/tv/symbols/:market?', async (req, res) => {
   const marketPk = req.params.market as string
   const symbol = symbolsByPk[marketPk]
   const response = {
