@@ -272,6 +272,7 @@ app.get('/tv/symbols', async (req, res) => {
   const symbol = symbolsByPk[marketPk]
   const response = {
     name: symbol,
+    market: marketPk,
     ticker: symbol,
     description: symbol,
     type: 'Spot',
