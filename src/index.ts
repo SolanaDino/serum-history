@@ -290,12 +290,14 @@ app.get('/tv/symbols', async (req, res) => {
 
 app.get('/tv/history', async (req, res) => {
   // parse
-  const marketName = req.query.symbol as string
+  const marketPk = req.query.market as string
+  const marketName = symbolsByPk[marketPk]
+
   const market = nativeMarketsV3[marketName]
   // || groupConfig.perpMarkets.find((m) => m.name === marketName)
   const resolution = resolutions[req.query.resolution as string] as number
-  let from = parseInt(req.query.from as string) * 1000
-  let to = parseInt(req.query.to as string) * 1000
+  let from = parseInt(req.query.from_time as string) * 1000
+  let to = parseInt(req.query.to_time as string) * 1000
 
   // validate
   const validSymbol = market != undefined
