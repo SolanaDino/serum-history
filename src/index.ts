@@ -219,8 +219,8 @@ collectMarketData(programIdV3, nativeMarketsV3)
 // }
 
 const priceScales: any = {
-  'DINO/USDC': 10000,
-  'DINOEGG/USDC': 10000,
+  'DINO/USDC': 100000,
+  'DINOEGG/USDC': 100000,
 }
 
 const cache = new LRUCache<string, Trade[]>(
