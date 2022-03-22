@@ -21,7 +21,9 @@ import notify from './notify'
 import LRUCache from 'lru-cache'
 import * as dayjs from 'dayjs'
 
-const redisUrl = new URL(process.env.REDISCLOUD_URL || 'redis://localhost:6379')
+const redisUrl = new URL(
+  'redis://:p9ca85471ad1f502a72f64af5e5ca6161fbfa615a4d83d975851e6f349d5b6cb4@ec2-52-51-25-108.eu-west-1.compute.amazonaws.com:12440'
+)
 const host = redisUrl.hostname
 const port = parseInt(redisUrl.port)
 let password: string | undefined
@@ -31,7 +33,7 @@ if (redisUrl.password !== '') {
 
 const network = 'mainnet-beta'
 const clusterUrl =
-  process.env.RPC_ENDPOINT_URL || 'https://solana-api.projectserum.com'
+  process.env.RPC_ENDPOINT_URL || 'https://api.mainnet-beta.solana.com'
 const fetchInterval = process.env.INTERVAL ? parseInt(process.env.INTERVAL) : 30
 
 console.log({ clusterUrl, fetchInterval })
@@ -41,7 +43,6 @@ const programIdV3 = '9xQeWvG816bUx9EPjHmaT23yvVM2ZWbrrpZb9PusVFin'
 const nativeMarketsV3: Record<string, string> = {
   'DINO/USDC': 'AC11orBo1k5PFPyhjTj9o4KjcwD9b95hauSRtExy8eKv',
   'DINOEGG/USDC': 'wtePW13tTkiuFH2R8qgGLVBdEqXUin61VhZpBWBZDVs',
-  'BTC/USDC': 'CVfYa8RGXnuDBeGmniCcdkBwoLqVxh92xB1JqgRQx3F',
 }
 
 const symbolsByPk = Object.assign(
