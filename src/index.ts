@@ -41,6 +41,7 @@ const programIdV3 = '9xQeWvG816bUx9EPjHmaT23yvVM2ZWbrrpZb9PusVFin'
 const nativeMarketsV3: Record<string, string> = {
   'DINO/USDC': 'AC11orBo1k5PFPyhjTj9o4KjcwD9b95hauSRtExy8eKv',
   'DINOEGG/USDC': 'wtePW13tTkiuFH2R8qgGLVBdEqXUin61VhZpBWBZDVs',
+  'BTC/USDC': 'CVfYa8RGXnuDBeGmniCcdkBwoLqVxh92xB1JqgRQx3F',
 }
 
 const symbolsByPk = Object.assign(
